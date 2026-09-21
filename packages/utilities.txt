@@ -1,0 +1,15 @@
+htop
+jq
+less
+lm_sensors
+lsof
+lua
+nano
+neovim
+nvme-cli
+openssh
+python
+smartmontools
+ufw
+vim
+wget

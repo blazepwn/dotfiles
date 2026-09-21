@@ -1,0 +1,197 @@
+[
+  {
+    "source": "$HOME/.config/hypr/hypridle.conf",
+    "path": ".config/hypr/hypridle.conf",
+    "sha256": "9617f21e8fdd26fe787d3d6336a16d4520cb2ea0ea9f3d2ffb3265d439dd5e87"
+  },
+  {
+    "source": "$HOME/.config/hypr/hyprland.lua",
+    "path": ".config/hypr/hyprland.lua",
+    "sha256": "3ffc61e954321410bd2b1ff4835fe7b2cadbc1705418be1bd616d50773da6c3e"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/env.lua",
+    "path": ".config/hypr/user/env.lua",
+    "sha256": "3cfd25e120681c8f4373762c94e514bad3de222975be0ab52a2320a4eaa3c081"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/binds.lua",
+    "path": ".config/hypr/user/binds.lua",
+    "sha256": "14191c39e26ed24102087b18b20ede75132a8bfa35f18de0c92939035c3ba54c"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/input.lua",
+    "path": ".config/hypr/user/input.lua",
+    "sha256": "8da233c6a3cfb49cfc2078d615965f4bf62e5b69ab656db49b280986bf830a12"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/gestures.lua",
+    "path": ".config/hypr/user/gestures.lua",
+    "sha256": "56db034b20ce46e6e27c5da81c31fec920c63f41e629e8a94f2d1f33d541004e"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/startup.lua",
+    "path": ".config/hypr/user/startup.lua",
+    "sha256": "e8b8c865f4a7f7a85438c7d4e8057c1abc0f9c310c232c986c3b37cc4d42d533"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/windowrules.lua",
+    "path": ".config/hypr/user/windowrules.lua",
+    "sha256": "ade6fc0edaee4861be093ce02157dc250b494c7cef575bec7762687579bf72cb"
+  },
+  {
+    "source": "$HOME/.config/hypr/user/lid.lua",
+    "path": ".config/hypr/user/lid.lua",
+    "sha256": "ad18d8f3ac6d0bbe11ccd2bc2c69e63686df91eef9553d8ff29e7ab1e0e60eb3"
+  },
+  {
+    "source": "$HOME/.config/kitty/color.ini",
+    "path": ".config/kitty/color.ini",
+    "sha256": "6db854735af9bd95940c9d759e853ff044083c6854c3466fdb9dfdbacfa74809"
+  },
+  {
+    "source": "$HOME/.config/kitty/kitty.conf",
+    "path": ".config/kitty/kitty.conf",
+    "sha256": "53633c7f2f4e1003afac65a7c0a32f484914c10b6131eda6c98b0f2b26921d36"
+  },
+  {
+    "source": "$HOME/.config/lsd/colors.yaml",
+    "path": ".config/lsd/colors.yaml",
+    "sha256": "b6e38238f76898462d7f7cf10f65115907c9fcd4e94692cb71b1b5fd7adbe3c9"
+  },
+  {
+    "source": "$HOME/.config/lsd/config.yaml",
+    "path": ".config/lsd/config.yaml",
+    "sha256": "ae6201c2a970b3c0318e899f17112e38c122d20ce76bf976c629d1f1ea9da5e1"
+  },
+  {
+    "source": "$HOME/.config/nwg-look/config",
+    "path": ".config/nwg-look/config",
+    "sha256": "f9a8efd1b4cd80125f76c9b026c33a51bb8b007fee780ce88784a38c05afe11c"
+  },
+  {
+    "source": "$HOME/.config/xsettingsd/xsettingsd.conf",
+    "path": ".config/xsettingsd/xsettingsd.conf",
+    "sha256": "40877084552e96be5b65f0a4876a48df4465897594a828a32e93adefc1520593"
+  },
+  {
+    "source": "$HOME/.zshrc",
+    "path": ".zshrc",
+    "sha256": "90d2c748272c550bf02bee3d9d0749461d5893b286537cf3696af033f39b4d8c"
+  },
+  {
+    "source": "$HOME/.p10k.zsh",
+    "path": ".p10k.zsh",
+    "sha256": "dd14590507426630df2d8d13da49a5d0859bea946b384fe20afc0d10d1a82f5e"
+  },
+  {
+    "source": "$HOME/.local/bin/lid-power.sh",
+    "path": ".local/bin/lid-power.sh",
+    "sha256": "88bc4427cabf1bfe44d9a6ea9092f8d032f95e72019ca6f3fe248c021bef2647"
+  },
+  {
+    "source": "$HOME/.icons/default/index.theme",
+    "path": ".icons/default/index.theme",
+    "sha256": "1e6161413bb150f887d81028258d56d9e37d46068bc1282f9e7f6e69a5424788"
+  },
+  {
+    "source": "$HOME/.config/gtk-3.0/settings.ini",
+    "path": ".config/gtk-3.0/settings.ini",
+    "sha256": "9618b8a4d3bb33b7e6e10ee4f75329a5e562ada22af384c6b1ee241a8c0adda8"
+  },
+  {
+    "source": "$HOME/.config/gtk-3.0/gtk.css",
+    "path": ".config/gtk-3.0/gtk.css",
+    "sha256": "4bbfefb619678178cac25b64e70558a48dd957174442146a62e5a0888ea8ce0a"
+  },
+  {
+    "source": "$HOME/.config/gtk-4.0/settings.ini",
+    "path": ".config/gtk-4.0/settings.ini",
+    "sha256": "dcf9dfb7df06d84cc6b2aed2b2856f79194b281ce58c22257acf048d38351733"
+  },
+  {
+    "source": "$HOME/.config/ambxst/binds.json",
+    "path": ".config/ambxst/binds.json",
+    "sha256": "d371025c6b00dd311c418fe8e719a39f0359fcb94d9eef2b6ae63614e58a07d8"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/lockscreen.json",
+    "path": ".config/ambxst/config/lockscreen.json",
+    "sha256": "9ad1e515db0f312ba4b75d7d7843840daf72787e01185a7cbfd6a59de701d413"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/dock.json",
+    "path": ".config/ambxst/config/dock.json",
+    "sha256": "2723e4af8caac9a62b70b0be729804153e59dbb9d4ab49defe1128c2624c8b4a"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/desktop.json",
+    "path": ".config/ambxst/config/desktop.json",
+    "sha256": "da3efce3d899297f988a66cfc437ca83d8a29e52f8a40aae0494bbb240e7fc0e"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/performance.json",
+    "path": ".config/ambxst/config/performance.json",
+    "sha256": "97f33ab637c656b72eedeeb6d7f4dc2d7275c64d0d49a87e4f15197eb0ac14e2"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/system.json",
+    "path": ".config/ambxst/config/system.json",
+    "sha256": "23cb4972c4a6174874164fc2bd03cf64fea90a0c3957a86781e4886c73647504"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/notch.json",
+    "path": ".config/ambxst/config/notch.json",
+    "sha256": "79a1fcf53fcf664c317434039e991c1b5a3fe631d81819ca5ad9dc9b2ef3f595"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/compositor.json",
+    "path": ".config/ambxst/config/compositor.json",
+    "sha256": "b393f354b40b7a76e6e88d66d606473343c74fd30e1ba3f271400fbbeb219aca"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/overview.json",
+    "path": ".config/ambxst/config/overview.json",
+    "sha256": "9710879d64169c7a9784140d920750f58096ac2ef6493edd08b4e2275e00f0ee"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/workspaces.json",
+    "path": ".config/ambxst/config/workspaces.json",
+    "sha256": "fd8e89c376ce9c34b39d91ccb166ed4d3b5cf22ceba4bd030bb3e4ab78e814f6"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/bar.json",
+    "path": ".config/ambxst/config/bar.json",
+    "sha256": "c2aeb850390c2b1ae69d21ec47b702794a81cfecf5f79892a509a77fe8ae8fd5"
+  },
+  {
+    "source": "$HOME/.config/ambxst/config/theme.json",
+    "path": ".config/ambxst/config/theme.json",
+    "sha256": "4d44074a64310d7541015ee92ddc139bfc8321b963fecb6864ad88309adfa516"
+  },
+  {
+    "source": "$HOME/Downloads/Colloid-gtk-theme/LICENSE",
+    "path": "vendor/Colloid-LICENSE",
+    "sha256": "605e9047a563c5c8396ffb18232aa4304ec56586aee537c45064c6fb425e44ad"
+  },
+  {
+    "source": "/etc/systemd/logind.conf.d/20-lid.conf",
+    "path": "system/etc/systemd/logind.conf.d/20-lid.conf",
+    "sha256": "8022b42c61316ff9844d95d098c863b4110914e826cbe23c29f46f751a7868f1"
+  },
+  {
+    "source": "/usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh",
+    "path": "vendor/zsh-sudo/sudo.plugin.zsh",
+    "sha256": "a57ca50dd7607af2651db558151cfb2fea0139bf2141b1968b87bb67d95c2c59"
+  },
+  {
+    "source": "$HOME/Pictures/Wallpapers/1348334.jpg",
+    "path": "Pictures/Wallpapers/1348334.jpg",
+    "sha256": "fa021c86028d3b7c29023aa2184827ea4a7745840de7bc05117e53bbd24591de"
+  },
+  {
+    "source": "/etc/systemd/zram-generator.conf",
+    "path": "system/etc/systemd/zram-generator.conf",
+    "sha256": "da096917b8512aef69c5db81a06bb2231e305bf03e2b9f7848825681cd896dc8"
+  }
+]

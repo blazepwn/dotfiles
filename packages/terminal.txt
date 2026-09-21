@@ -1,0 +1,9 @@
+bat
+file
+fzf
+kitty
+lsd
+tmux
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting

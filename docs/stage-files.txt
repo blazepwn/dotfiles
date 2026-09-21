@@ -1,0 +1,55 @@
+Archivos creados en las etapas aprobadas (respecto al estado auditado):
+.local/share/nwg-look/gsettings
+docs/firewall.md
+docs/staged-fixes.md
+docs/verified-state.json
+docs/stage-files.txt
+manifests/README.md
+manifests/configs.txt
+manifests/assets.txt
+packages/optional/ocr-extra.txt
+packages/optional/theme-build.txt
+scripts/bootstrap-ambxst.sh
+scripts/bootstrap-hyprland.lua
+scripts/check-session.py
+scripts/firewall.sh
+scripts/manual-components.sh
+
+Archivos existentes actualizados en estas etapas:
+.config/ambxst/config/bar.json
+.config/ambxst/config/desktop.json
+.config/ambxst/config/dock.json
+.config/ambxst/config/notch.json
+.config/ambxst/config/overview.json
+.config/ambxst/config/system.json
+.config/ambxst/config/workspaces.json
+.config/gtk-3.0/gtk.css
+.config/hypr/user/binds.lua
+.config/hypr/user/lid.lua
+.config/hypr/user/startup.lua
+.themes/Colloid-Dark/gtk-4.0/gtk.css
+.zshrc
+README.md
+docs/audit.md
+docs/changes.txt
+docs/git-status.txt
+docs/manual-installs.md
+packages/README.md
+packages/ambxst.txt
+packages/aur.txt
+packages/fonts-theme.txt
+packages/versions.tsv
+scripts/install.sh
+scripts/restore.py
+scripts/test_restore.py
+
+Cambios en HOME (con backup previo):
+$HOME/.config/ambxst/config/system.json
+$HOME/.config/hypr/user/binds.lua
+$HOME/.config/hypr/user/lid.lua
+$HOME/.config/hypr/user/startup.lua
+
+Sin cambios root, instalaciones de paquetes, commit ni push.
+Los JSON desktop/dock/notch/overview/workspaces solo incorporan el formato vivo.
+La paleta GTK y las preferencias de barra incorporan cambios del sistema vivo.
+La lista completa frente a HEAD está en changes.txt; incluye la sincronización anterior.

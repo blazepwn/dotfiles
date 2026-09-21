@@ -1,0 +1,277 @@
+{
+  "date": "2026-09-21",
+  "power_profile_at_final_check": "power-saver",
+  "generated_lua_sha256": "448b14437af2e386445145e65c19e2ad5e46bb20c3ebb82738db621c2754ebb7",
+  "files": [
+    {
+      "path": ".config/ambxst/binds.json",
+      "source": "$HOME/.config/ambxst/binds.json",
+      "repo_sha256": "d371025c6b00dd311c418fe8e719a39f0359fcb94d9eef2b6ae63614e58a07d8",
+      "live_sha256": "d371025c6b00dd311c418fe8e719a39f0359fcb94d9eef2b6ae63614e58a07d8",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/bar.json",
+      "source": "$HOME/.config/ambxst/config/bar.json",
+      "repo_sha256": "20ad7d60761a8b4c582c054b8b621acab3eb4fc13e21909f99b6a5232f28f069",
+      "live_sha256": "20ad7d60761a8b4c582c054b8b621acab3eb4fc13e21909f99b6a5232f28f069",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/compositor.json",
+      "source": "$HOME/.config/ambxst/config/compositor.json",
+      "repo_sha256": "b393f354b40b7a76e6e88d66d606473343c74fd30e1ba3f271400fbbeb219aca",
+      "live_sha256": "b393f354b40b7a76e6e88d66d606473343c74fd30e1ba3f271400fbbeb219aca",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/desktop.json",
+      "source": "$HOME/.config/ambxst/config/desktop.json",
+      "repo_sha256": "3b3f36d7c2fa1fcc5dc74ba8799354976726d0ab29f1cc5bd8d04fdc02871bb1",
+      "live_sha256": "3b3f36d7c2fa1fcc5dc74ba8799354976726d0ab29f1cc5bd8d04fdc02871bb1",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/dock.json",
+      "source": "$HOME/.config/ambxst/config/dock.json",
+      "repo_sha256": "ab65b87f95da407f1141f67a94275f9c9783a920fe30ab33d76a361b5a07b731",
+      "live_sha256": "ab65b87f95da407f1141f67a94275f9c9783a920fe30ab33d76a361b5a07b731",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/lockscreen.json",
+      "source": "$HOME/.config/ambxst/config/lockscreen.json",
+      "repo_sha256": "9ad1e515db0f312ba4b75d7d7843840daf72787e01185a7cbfd6a59de701d413",
+      "live_sha256": "9ad1e515db0f312ba4b75d7d7843840daf72787e01185a7cbfd6a59de701d413",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/notch.json",
+      "source": "$HOME/.config/ambxst/config/notch.json",
+      "repo_sha256": "3b96abf9c29bbe7c0a921745623a5429d8e98ebb56f3ee3e8908f10dfb32854e",
+      "live_sha256": "3b96abf9c29bbe7c0a921745623a5429d8e98ebb56f3ee3e8908f10dfb32854e",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/overview.json",
+      "source": "$HOME/.config/ambxst/config/overview.json",
+      "repo_sha256": "e7a8c05598d7ffe46be625a34b8057c883c91ecdb7f5a3f4b5348df7b323c2e4",
+      "live_sha256": "e7a8c05598d7ffe46be625a34b8057c883c91ecdb7f5a3f4b5348df7b323c2e4",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/performance.json",
+      "source": "$HOME/.config/ambxst/config/performance.json",
+      "repo_sha256": "97f33ab637c656b72eedeeb6d7f4dc2d7275c64d0d49a87e4f15197eb0ac14e2",
+      "live_sha256": "97f33ab637c656b72eedeeb6d7f4dc2d7275c64d0d49a87e4f15197eb0ac14e2",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/system.json",
+      "source": "$HOME/.config/ambxst/config/system.json",
+      "repo_sha256": "0552b8d7288916e0d04ef3dfae89de2f1e2d35658bc92cbb6b129c1d59552bc0",
+      "live_sha256": "0552b8d7288916e0d04ef3dfae89de2f1e2d35658bc92cbb6b129c1d59552bc0",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/theme.json",
+      "source": "$HOME/.config/ambxst/config/theme.json",
+      "repo_sha256": "4d44074a64310d7541015ee92ddc139bfc8321b963fecb6864ad88309adfa516",
+      "live_sha256": "4d44074a64310d7541015ee92ddc139bfc8321b963fecb6864ad88309adfa516",
+      "identical": true
+    },
+    {
+      "path": ".config/ambxst/config/workspaces.json",
+      "source": "$HOME/.config/ambxst/config/workspaces.json",
+      "repo_sha256": "d1b1ce3262865e7fefa07a99bf1a9c5c261835e3e69c06ba37505f0ba6e7869f",
+      "live_sha256": "d1b1ce3262865e7fefa07a99bf1a9c5c261835e3e69c06ba37505f0ba6e7869f",
+      "identical": true
+    },
+    {
+      "path": ".config/gtk-3.0/gtk.css",
+      "source": "$HOME/.config/gtk-3.0/gtk.css",
+      "repo_sha256": "2de45ffcf9c1ca4f369267bbc4c5d3343548581f1fc60c90dc7a951b40e64398",
+      "live_sha256": "3ebd8558e202091631ca1f5ec322999fd8ba24093bfa2e9e4c5553b6ccea2976",
+      "identical": false
+    },
+    {
+      "path": ".config/gtk-3.0/settings.ini",
+      "source": "$HOME/.config/gtk-3.0/settings.ini",
+      "repo_sha256": "9618b8a4d3bb33b7e6e10ee4f75329a5e562ada22af384c6b1ee241a8c0adda8",
+      "live_sha256": "9618b8a4d3bb33b7e6e10ee4f75329a5e562ada22af384c6b1ee241a8c0adda8",
+      "identical": true
+    },
+    {
+      "path": ".config/gtk-4.0/assets",
+      "source": "$HOME/.config/gtk-4.0/assets",
+      "repo_link": "../../.themes/Colloid-Dark/gtk-4.0/assets",
+      "live_link": "$HOME/.themes/Colloid-Dark/gtk-4.0/assets"
+    },
+    {
+      "path": ".config/gtk-4.0/gtk-dark.css",
+      "source": "$HOME/.config/gtk-4.0/gtk-dark.css",
+      "repo_link": "../../.themes/Colloid-Dark/gtk-4.0/gtk-dark.css",
+      "live_link": "$HOME/.themes/Colloid-Dark/gtk-4.0/gtk-dark.css"
+    },
+    {
+      "path": ".config/gtk-4.0/gtk.css",
+      "source": "$HOME/.config/gtk-4.0/gtk.css",
+      "repo_link": "../../.themes/Colloid-Dark/gtk-4.0/gtk.css",
+      "live_link": "$HOME/.themes/Colloid-Dark/gtk-4.0/gtk.css"
+    },
+    {
+      "path": ".config/gtk-4.0/settings.ini",
+      "source": "$HOME/.config/gtk-4.0/settings.ini",
+      "repo_sha256": "dcf9dfb7df06d84cc6b2aed2b2856f79194b281ce58c22257acf048d38351733",
+      "live_sha256": "dcf9dfb7df06d84cc6b2aed2b2856f79194b281ce58c22257acf048d38351733",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/hypridle.conf",
+      "source": "$HOME/.config/hypr/hypridle.conf",
+      "repo_sha256": "9617f21e8fdd26fe787d3d6336a16d4520cb2ea0ea9f3d2ffb3265d439dd5e87",
+      "live_sha256": "9617f21e8fdd26fe787d3d6336a16d4520cb2ea0ea9f3d2ffb3265d439dd5e87",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/hyprland.lua",
+      "source": "$HOME/.config/hypr/hyprland.lua",
+      "repo_sha256": "3ffc61e954321410bd2b1ff4835fe7b2cadbc1705418be1bd616d50773da6c3e",
+      "live_sha256": "3ffc61e954321410bd2b1ff4835fe7b2cadbc1705418be1bd616d50773da6c3e",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/binds.lua",
+      "source": "$HOME/.config/hypr/user/binds.lua",
+      "repo_sha256": "a1e0f895041ebc87ddbde32328919fc0158718e07bdf6e1fb5cf2c89ec69f532",
+      "live_sha256": "a1e0f895041ebc87ddbde32328919fc0158718e07bdf6e1fb5cf2c89ec69f532",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/env.lua",
+      "source": "$HOME/.config/hypr/user/env.lua",
+      "repo_sha256": "3cfd25e120681c8f4373762c94e514bad3de222975be0ab52a2320a4eaa3c081",
+      "live_sha256": "3cfd25e120681c8f4373762c94e514bad3de222975be0ab52a2320a4eaa3c081",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/gestures.lua",
+      "source": "$HOME/.config/hypr/user/gestures.lua",
+      "repo_sha256": "56db034b20ce46e6e27c5da81c31fec920c63f41e629e8a94f2d1f33d541004e",
+      "live_sha256": "56db034b20ce46e6e27c5da81c31fec920c63f41e629e8a94f2d1f33d541004e",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/input.lua",
+      "source": "$HOME/.config/hypr/user/input.lua",
+      "repo_sha256": "8da233c6a3cfb49cfc2078d615965f4bf62e5b69ab656db49b280986bf830a12",
+      "live_sha256": "8da233c6a3cfb49cfc2078d615965f4bf62e5b69ab656db49b280986bf830a12",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/lid.lua",
+      "source": "$HOME/.config/hypr/user/lid.lua",
+      "repo_sha256": "1327aa5111c4e6ed232d5cb168682a935e1d7022e604771c7cfd338478fee067",
+      "live_sha256": "1327aa5111c4e6ed232d5cb168682a935e1d7022e604771c7cfd338478fee067",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/startup.lua",
+      "source": "$HOME/.config/hypr/user/startup.lua",
+      "repo_sha256": "ad368577c50fd2f9f6556f7bd7b589f59328aeca04fb5b09c8b66dfa73fd4444",
+      "live_sha256": "ad368577c50fd2f9f6556f7bd7b589f59328aeca04fb5b09c8b66dfa73fd4444",
+      "identical": true
+    },
+    {
+      "path": ".config/hypr/user/windowrules.lua",
+      "source": "$HOME/.config/hypr/user/windowrules.lua",
+      "repo_sha256": "ade6fc0edaee4861be093ce02157dc250b494c7cef575bec7762687579bf72cb",
+      "live_sha256": "ade6fc0edaee4861be093ce02157dc250b494c7cef575bec7762687579bf72cb",
+      "identical": true
+    },
+    {
+      "path": ".config/kitty/color.ini",
+      "source": "$HOME/.config/kitty/color.ini",
+      "repo_sha256": "6db854735af9bd95940c9d759e853ff044083c6854c3466fdb9dfdbacfa74809",
+      "live_sha256": "6db854735af9bd95940c9d759e853ff044083c6854c3466fdb9dfdbacfa74809",
+      "identical": true
+    },
+    {
+      "path": ".config/kitty/kitty.conf",
+      "source": "$HOME/.config/kitty/kitty.conf",
+      "repo_sha256": "53633c7f2f4e1003afac65a7c0a32f484914c10b6131eda6c98b0f2b26921d36",
+      "live_sha256": "53633c7f2f4e1003afac65a7c0a32f484914c10b6131eda6c98b0f2b26921d36",
+      "identical": true
+    },
+    {
+      "path": ".config/lsd/colors.yaml",
+      "source": "$HOME/.config/lsd/colors.yaml",
+      "repo_sha256": "b6e38238f76898462d7f7cf10f65115907c9fcd4e94692cb71b1b5fd7adbe3c9",
+      "live_sha256": "b6e38238f76898462d7f7cf10f65115907c9fcd4e94692cb71b1b5fd7adbe3c9",
+      "identical": true
+    },
+    {
+      "path": ".config/lsd/config.yaml",
+      "source": "$HOME/.config/lsd/config.yaml",
+      "repo_sha256": "ae6201c2a970b3c0318e899f17112e38c122d20ce76bf976c629d1f1ea9da5e1",
+      "live_sha256": "ae6201c2a970b3c0318e899f17112e38c122d20ce76bf976c629d1f1ea9da5e1",
+      "identical": true
+    },
+    {
+      "path": ".config/nwg-look/config",
+      "source": "$HOME/.config/nwg-look/config",
+      "repo_sha256": "f9a8efd1b4cd80125f76c9b026c33a51bb8b007fee780ce88784a38c05afe11c",
+      "live_sha256": "f9a8efd1b4cd80125f76c9b026c33a51bb8b007fee780ce88784a38c05afe11c",
+      "identical": true
+    },
+    {
+      "path": ".config/xsettingsd/xsettingsd.conf",
+      "source": "$HOME/.config/xsettingsd/xsettingsd.conf",
+      "repo_sha256": "40877084552e96be5b65f0a4876a48df4465897594a828a32e93adefc1520593",
+      "live_sha256": "40877084552e96be5b65f0a4876a48df4465897594a828a32e93adefc1520593",
+      "identical": true
+    },
+    {
+      "path": ".local/bin/lid-power.sh",
+      "source": "$HOME/.local/bin/lid-power.sh",
+      "repo_sha256": "88bc4427cabf1bfe44d9a6ea9092f8d032f95e72019ca6f3fe248c021bef2647",
+      "live_sha256": "88bc4427cabf1bfe44d9a6ea9092f8d032f95e72019ca6f3fe248c021bef2647",
+      "identical": true
+    },
+    {
+      "path": ".local/share/nwg-look/gsettings",
+      "source": "$HOME/.local/share/nwg-look/gsettings",
+      "repo_sha256": "41739b3aa34b84946ba1a603b0c41ec04e857076a69adea9304b03b2639469f0",
+      "live_sha256": "41739b3aa34b84946ba1a603b0c41ec04e857076a69adea9304b03b2639469f0",
+      "identical": true
+    },
+    {
+      "path": ".p10k.zsh",
+      "source": "$HOME/.p10k.zsh",
+      "repo_sha256": "dd14590507426630df2d8d13da49a5d0859bea946b384fe20afc0d10d1a82f5e",
+      "live_sha256": "dd14590507426630df2d8d13da49a5d0859bea946b384fe20afc0d10d1a82f5e",
+      "identical": true
+    },
+    {
+      "path": ".zshrc",
+      "source": "$HOME/.zshrc",
+      "repo_sha256": "a5c51aaa027344890b349b5530056e312284597b952ad211f26ece306b4d3da3",
+      "live_sha256": "90d2c748272c550bf02bee3d9d0749461d5893b286537cf3696af033f39b4d8c",
+      "identical": false
+    },
+    {
+      "path": "system/etc/systemd/logind.conf.d/20-lid.conf",
+      "source": "/etc/systemd/logind.conf.d/20-lid.conf",
+      "identical": true,
+      "repo_sha256": "8022b42c61316ff9844d95d098c863b4110914e826cbe23c29f46f751a7868f1",
+      "live_sha256": "8022b42c61316ff9844d95d098c863b4110914e826cbe23c29f46f751a7868f1"
+    },
+    {
+      "path": "system/etc/systemd/zram-generator.conf",
+      "source": "/etc/systemd/zram-generator.conf",
+      "identical": true,
+      "repo_sha256": "da096917b8512aef69c5db81a06bb2231e305bf03e2b9f7848825681cd896dc8",
+      "live_sha256": "da096917b8512aef69c5db81a06bb2231e305bf03e2b9f7848825681cd896dc8"
+    }
+  ]
+}

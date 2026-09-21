@@ -1,0 +1,14 @@
+brightnessctl
+hypridle
+hyprland
+hyprpolkitagent
+libpulse
+mesa
+mesa-utils
+nwg-look
+playerctl
+xdg-desktop-portal
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+xdg-desktop-portal-hyprland
+xorg-xwayland

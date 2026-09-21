@@ -1,0 +1,6 @@
+# Idiomas OCR instalados pero desactivados en mis preferencias.
+tesseract-data-chi_sim
+tesseract-data-chi_tra
+tesseract-data-jpn
+tesseract-data-kor
+tesseract-data-lat

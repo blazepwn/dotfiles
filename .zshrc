@@ -1,16 +1,20 @@
 
-# Source Powerlevel10k theme for both users
-if [[ -r /root/.powerlevel10k/powerlevel10k.zsh-theme ]]; then
-  source /root/.powerlevel10k/powerlevel10k.zsh-theme
-elif [[ -r /home/blaze/.powerlevel10k/powerlevel10k.zsh-theme ]]; then
-  source /home/blaze/.powerlevel10k/powerlevel10k.zsh-theme
-fi
+# Powerlevel10k is loaded below after plugins and keybindings.
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Manual configuration
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/blaze/.local/bin/ctgen:/home/blaze/go/bin:/home/blaze/.cargo/bin:/opt/android-studio/bin
+typeset -U path PATH
+path=("$HOME/.local/bin" $path)
+# Conservo estas rutas históricas como opcionales: no está documentado si
+# volveré a usar esas herramientas. No añado directorios inexistentes al PATH.
+for dotfiles_optional_bin in "$HOME/.local/bin/ctgen" "$HOME/go/bin" \
+                             "$HOME/.cargo/bin" /opt/android-studio/bin; do
+    [[ -d $dotfiles_optional_bin ]] && path+=("$dotfiles_optional_bin")
+done
+unset dotfiles_optional_bin
+export PATH
 
 # Manual aliases
 alias ll='lsd -lh --group-dirs=first'
@@ -24,8 +28,8 @@ alias catn='/usr/bin/cat'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 
-source /usr/share/zsh/plugins/sudo.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 
 # fzf improvement
 function fzf-lovely(){

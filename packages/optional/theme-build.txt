@@ -1,0 +1,2 @@
+# Solo para reconstruir Colloid desde fuente; el restore copia el tema instalado.
+sassc

@@ -1,0 +1,35 @@
+ D .config/hypr/conf/animations.conf
+ D .config/hypr/conf/binds.conf
+ D .config/hypr/conf/decoration.conf
+ D .config/hypr/conf/env.conf
+ D .config/hypr/conf/general.conf
+ D .config/hypr/conf/input.conf
+ D .config/hypr/conf/monitors.conf
+ D .config/hypr/conf/rules.conf
+ D .config/hypr/conf/startup.conf
+ D .config/hypr/conf/workspaces.conf
+ D .config/hypr/hyprland.conf
+ D .config/hypr/scripts/take_edit_copy.sh
+ M .icons/default/index.theme
+ D .p10k.zsh.root
+ M .zshrc
+ M README.md
+?? .config/ambxst/
+?? .config/gtk-3.0/
+?? .config/gtk-4.0/
+?? .config/hypr/hypridle.conf
+?? .config/hypr/hyprland.lua
+?? .config/hypr/user/
+?? .config/nwg-look/
+?? .config/xsettingsd/
+?? .gitignore
+?? .local/
+?? .themes/
+?? Pictures/Wallpapers/1348334.jpg
+?? docs/
+?? legacy/
+?? manifests/
+?? packages/
+?? scripts/
+?? system/
+?? vendor/

@@ -1,0 +1,3 @@
+asusctl
+power-profiles-daemon
+rog-control-center

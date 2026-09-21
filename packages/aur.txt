@@ -1,0 +1,8 @@
+brave-origin-nightly-bin
+discord-canary
+elecwhat-bin
+gtk-engine-murrine
+spotify
+ttf-league-gothic
+ttf-phosphor-icons
+visual-studio-code-bin
