@@ -23,6 +23,6 @@
     "position": "top",
     "screenList": [
     ],
-    "showPinButton": true,
+    "showPinButton": false,
     "use12hFormat": false
 }

@@ -26,6 +26,16 @@ pero no se necesita para restaurar el wallpaper de Ambxst y se omite.
 El agente que corre realmente es `/usr/lib/hyprpolkitagent/hyprpolkitagent`.
 `pactl`, utilizado en startup, viene de `libpulse`.
 
+Pentest Mode usa `iproute2`, `wl-clipboard` y `python`, todos oficiales
+y ya instalados en la máquina auditada. `iproute2` queda explícito en ambxst.txt;
+Python sigue en utilities.txt y wl-clipboard ya estaba en ambxst.txt. No requiere
+paquetes AUR adicionales, jq ni un helper privilegiado. La fase 4 añade
+`networkmanager-vpn-plugin-openvpn` y `python-gobject` a ambxst.txt. El plugin
+oficial trae OpenVPN como dependencia; NetworkManager/libnm ya pertenecen a la
+pila de red. No ejecuto OpenVPN directamente.
+El comprobador de desarrollo usa Go, GJS y qmlformat, disponibles en esta máquina;
+Go y GJS no son dependencias de ejecución del mod.
+
 En AUR se incluyen Brave Origin Nightly, Discord Canary, elecwhat, Spotify,
 VS Code, Murrine y las fuentes Phosphor/League Gothic que pidió Ambxst. `gtk2` es una
 dependencia externa instalada de Murrine; yay debe resolverla. No se incluye

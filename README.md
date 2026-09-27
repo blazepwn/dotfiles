@@ -17,6 +17,201 @@ Las correcciones y sus comprobaciones están en [docs/audit.md](docs/audit.md).
 No uso el restaurador para particionar, cambiar firmware ni sustituir mis
 configuraciones por otro conjunto de dotfiles.
 
+## Pentest Mode
+
+El mod local está en [mods/pentest-mode](mods/pentest-mode). Local IP, VPN y Target
+usan el bar nativo y un pequeño fuego Phosphor abre Pentest dentro del Notch.
+La revisión **0.4.0** añade gestión mediante NetworkManager/libnm. La importación
+está validada; **la primera conexión real sigue bloqueada hasta aprobarla**.
+No hay helper root, pkexec ni policies Polkit propias.
+
+Lo activo con **SUPER+SHIFT+P**, desde la cabecera de Pentest o en
+**Settings → Mods → Pentest Mode → Settings**. El ajuste «Pentest Mode» es
+inmediato. El interruptor que habilita/deshabilita el *paquete* en Mods recompone
+la generación y requiere recargar Ambxst; son dos cosas distintas.
+
+Local Auto muestra la IPv4 source de `ip route get 1.1.1.1`, resuelta localmente.
+No consulta mi IP pública. Si cambio de Wi-Fi a Ethernet, sigue la nueva ruta.
+Si una VPN captura la ruta a Internet, Auto puede seguir ese túnel. Wi-Fi,
+Ethernet, USB y Custom recuerdan su interfaz por separado; si desaparece,
+mantienen la elección y muestran Disconnected. No eligen otra silenciosamente.
+
+Click izquierdo abre el formulario dentro del Notch. Middle/right copia solo
+la IP y muestra un check breve; no copia «Disconnected». Target admite IPv4,
+plataforma, nombre y hostname opcionales. La plataforma es metadata y no modifica
+la red. Save persiste; Clear elimina el target y oculta su píldora. Los nombres
+largos se recortan y el tooltip permite leerlos completos. En barra vertical las
+píldoras se compactan al icono y muestran el dato al pasar el cursor. En horizontal,
+Local y VPN conservan su texto completo; para Target, el mod calcula el espacio
+que dejan los módulos nativos junto al Notch y primero recorta el nombre; si ni siquiera cabe la IP, conserva el icono y el
+tooltip. Así no tapa Presets, Tools ni la bandeja. El fuego tiene su propio espacio
+solo con el Notch cerrado; al abrir Pentest queda el fuego de su cabecera.
+
+Default sigue el accent actual; los presets siguen tokens del tema y un custom
+hex/HSV queda fijo. El selector Custom abre un popover interno con hex/HSV, Cancel y Apply.
+No ocupa espacio en el formulario ni cambia el tamaño del Notch al abrirse. Solo se colorea el icono.
+El fuego siempre sigue el accent.
+
+En fase 2.1 el resumen pasó a tres filas compactas y se corrigió la selección
+accidental de Settings. Desde 0.3.3 Pentest usa su propia vista del Notch.
+Oculto Layout desde el patch del bar y Pin con `bar.showPinButton: false`.
+Layout abría el selector de distribución de ventanas; Pin fijaba/liberaba la
+barra para su autoocultado. Sus funciones siguen disponibles. Para recuperar Pin
+activo su opción nativa; para Layout retiro las dos líneas `visible: false` de
+su patch y actualizo el mod. Las píldoras siguen midiendo 36 px de alto y Target
+recorta únicamente el nombre cuando la IP completa cabe.
+
+La revisión **0.3.3** sustituye la integración anterior en Dashboard por una
+vista dedicada del Notch: sin sidebar ni Settings dentro de Pentest. El fuego
+abre el resumen con tres filas compactas y los cinco perfiles VPN. Local, VPN
+y Target tienen pestañas iguales al pie; los clics de las píldoras abren sus
+formularios directamente. El Notch usa 640 px de ancho exterior con el tema
+actual y ajusta la altura al contenido. Si no cabe, el scroll queda dentro.
+Solo el contenido hace slide/fade al cambiar de sección.
+
+Escape descarta primero el picker/popover, después vuelve al resumen y desde
+ahí cierra. Dashboard y Settings siguen disponibles por sus accesos nativos;
+Pentest ya no añade una pestaña al Dashboard. No cambia la detección, el estado
+VPN, Target, clipboard ni el bind. El [informe de la vista dedicada](docs/pentest-mode-surface.md)
+recoge la arquitectura, medidas, archivos y capturas. Los informes anteriores
+de fases 2.2/3.1 describen el diseño que esta revisión reemplaza.
+
+Apagar el modo conserva Target y preferencias. Target vive en el estado de
+Ambxst (`$XDG_STATE_HOME/ambxst/states.json`, clave `pentestMode`) hasta Clear.
+Los ajustes globales usan `$XDG_CONFIG_HOME/ambxst/mods/local.pentest-mode.json`.
+«Remember mode on restart» solo decide si recuerdo ON/OFF al iniciar; no borra
+Target ni interfaces. Con esa opción apagada, la siguiente sesión empieza OFF.
+
+Para validar e instalar, desde este repo:
+
+```bash
+python -B scripts/check-pentest-mode.py --check-bind
+ambxst mods install "$(pwd)/mods/pentest-mode"
+ambxst mods enable local.pentest-mode
+ambxst reload
+```
+
+El comprobador usa el parser del source instalado y aplica los patches en un
+directorio temporal. No instala ni modifica Ambxst. La compatibilidad inicial
+está limitada a 1.3.7. Después de cambiar el mod local:
+
+```bash
+ambxst mods update local.pentest-mode
+ambxst reload
+```
+
+Uso ruta absoluta al instalar: el daemon resuelve rutas relativas desde su
+directorio, no desde esta terminal. `update` vuelve a leer el directorio del
+repo; `rebuild` solo recompone los
+paquetes que ya están instalados. El keybind pertenece a
+`.config/hypr/user/binds.lua`, cargado después del Lua generado. Antes de
+restaurarlo en otra máquina, compruebo `hyprctl -j binds`; no sobrescribo un
+SUPER+SHIFT+P existente. No edito `~/.local/share/ambxst/hyprland.lua`.
+
+Para verificar el core:
+
+```bash
+ambxst mods list
+ambxst run pentest
+ambxst run pentest-local
+ambxst run pentest-target
+qs ipc --pid "$(cat "$XDG_RUNTIME_DIR/ambxst-qs.pid")" call pentest status
+qs log --pid "$(cat "$XDG_RUNTIME_DIR/ambxst-qs.pid")" -t 100
+hyprctl configerrors
+ip -j -4 route get 1.1.1.1
+```
+
+Si Local está Disconnected, reviso ruta/perfil/interfaz y que `ip` esté disponible.
+Si no copia, compruebo `wl-copy` y la sesión Wayland. Si un formulario no guarda,
+su error aparece dentro del panel; reviso permisos del directorio XDG state.
+No guardo Targets ni estado personal en los archivos del mod.
+
+Mis archivos VPN van bajo **`~/.vpn/`**, fuera del repo. `.gitignore`
+excluye `.ovpn`, claves, certificados y auth files: un `.ovpn` con certificados
+inline también es privado. No hago `git add -f` para saltarme esa protección.
+Browse lista archivos `.ovpn` del primer nivel, sin leer su contenido ni crear
+la carpeta. La selección valida de nuevo extensión, archivo regular y ruta
+canónica dentro de `~/.vpn`; rechaza `..` y enlaces que escapan. Guardar una ruta
+no inicia una VPN. Si el archivo desaparece, el perfil muestra que no está disponible.
+
+VPN mantiene cinco perfiles: HTB Machines, HTB Academy, HTB Season, TryHackMe y
+Custom. Cada uno recuerda archivo, interfaz y color. «Displayed VPN» elige qué
+perfil aparece en la barra; seleccionar una fila solo cambia el editor.
+
+Browse solo elige el archivo. **Import** lo registra mediante el plugin oficial
+OpenVPN de NetworkManager; **Re-import** actualiza explícitamente el mismo UUID.
+Si cambia el original, no se importa otra vez en silencio. El registro lleva
+`autoconnect=false` y `connection.permissions=user:<usuario>:`. No depende del
+nombre «Pentest - …» para identificarlo. Remove borra solo ese registro; si está
+activo, pide confirmar su desconexión. El `.ovpn` original se conserva.
+
+Los certificados inline se extraen fuera del repo, bajo
+`$XDG_DATA_HOME/pentest-mode/vpn-certs/<perfil>/<revisión>/` (por defecto
+`~/.local/share/...`). Directorios 0700, archivos 0600. El plugin recibe
+`NM_CERT_PATH`; los archivos externos permitidos se copian a ese mismo almacén
+privado para evitar que NM dependa de rutas cambiantes. No hay claves ni passwords
+en el JSON. UUID, huella y metadata viven en
+`$XDG_STATE_HOME/pentest-mode/vpn-registry.json` (0600).
+
+Los perfiles importados toman estado e IPv4 del ActiveConnection de su UUID.
+Connected exige ACTIVATED e IPv4; que exista `tun0` no basta. Al reiniciar Ambxst
+se consulta NM y no se reinicia la VPN. Apagar Pentest, quitar la UI o hacer
+rollback no desconecta nada. La conexión restringida al usuario requiere una
+sesión activa; logout puede desactivarla según NM. No lo he probado cerrando la
+sesión. Tras reboot no se reconecta automáticamente.
+
+El controlador incluye Keep both, cambio esperando la desconexión del perfil
+seleccionado y cancelación. Solo opera UUIDs de su registro. Una conexión lograda
+pasa a Displayed VPN; si cae, se elige la última conexión gestionada que siga
+Connected. Los conflictos de rutas/DNS solo generan un aviso: no se reescriben
+rutas ni se promete que dos redes solapadas funcionen a la vez.
+
+La primera activación sigue cerrada por `ACTIVATION_APPROVED = False` en el
+adaptador, también comprobado en la UI. Después de aprobar esa prueba se retirará
+el bloqueo. No lo desbloqueo como parte de las pruebas de importación.
+Si un perfil pide contraseña o clave cifrada, falta integrar un agente de
+secretos VPN: se informa el requisito y no se guarda la credencial. Los auth
+files no se importan. Un NEED_AUTH persistente se cancela con error legible.
+Polkit lo resuelve la política instalada de NetworkManager; no se garantiza un
+prompt en cada operación porque los permisos actuales pueden autorizarla.
+
+Para perfiles todavía no importados se conserva la observación de fase 3:
+candidatos por metadata del kernel, Auto sin inventar asociaciones y Manual
+atado a la interfaz elegida. Eso no confirma autenticación ni pertenencia al
+archivo. Las VPN externas nunca se desconectan ni pasan automáticamente a la barra.
+Middle/right copia solo la IPv4 disponible. No se persiste Connected como verdad.
+
+La [arquitectura y API](docs/pentest-vpn-api.md) documenta la frontera con NM;
+el [informe de fase 4](docs/pentest-mode-nm-validation.md) deja UUID, permisos,
+pruebas y la primera activación pendiente. Si falta el plugin, reviso
+`pacman -Q networkmanager-vpn-plugin-openvpn python-gobject`. Ante Error reviso
+la razón del panel; no pego logs de VPN completos porque pueden contener datos
+privados. No importo opciones rechazadas a ciegas: reviso compatibilidad primero.
+
+Para deshabilitar, volver atrás o retirar el paquete:
+
+```bash
+ambxst mods disable local.pentest-mode
+ambxst reload
+
+# Volver a la generación anterior, cuando exista:
+ambxst mods rollback
+ambxst reload
+
+# Quitar el paquete después de deshabilitarlo:
+ambxst mods remove local.pentest-mode
+```
+
+Al quitarlo también retiro su línea de `user/binds.lua` y ejecuto `hyprctl reload`.
+Clear es la acción explícita para borrar Target; quitar la UI no borra ese estado.
+Mods tiene una ventana de salud de ocho segundos al arrancar una generación nueva
+y recuperación a la anterior si Quickshell termina durante ella. Para recuperación
+manual desde una TTY, con Ambxst detenido: `AMBXST_MODS_DISABLED=1 ambxst`.
+No necesito reiniciar la máquina ni tocar GPU, energía o firewall.
+
+Dejo el [registro de validación y las pruebas manuales](docs/pentest-mode-validation.md)
+con los archivos, la integración y las limitaciones comprobadas.
+
 ## 1. Hardware
 
 | Componente | Mi laptop |

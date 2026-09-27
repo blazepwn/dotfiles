@@ -10,13 +10,15 @@ gradia
 gst-plugins-bad
 hicolor-icon-theme
 inetutils
+iproute2
 libavif
 libnotify
 libwebp
 matugen
+networkmanager-vpn-plugin-openvpn
 pavucontrol
+python-gobject
 qt6-base
-qt6ct
 qt6-declarative
 qt6-imageformats
 qt6-multimedia
@@ -25,6 +27,7 @@ qt6-shadertools
 qt6-svg
 qt6-tools
 qt6-wayland
+qt6ct
 quickshell
 sqlite
 syntax-highlighting
