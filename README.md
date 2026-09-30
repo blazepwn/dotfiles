@@ -21,8 +21,8 @@ configuraciones por otro conjunto de dotfiles.
 
 El mod local está en [mods/pentest-mode](mods/pentest-mode). Local IP, VPN y Target
 usan el bar nativo y un pequeño fuego Phosphor abre Pentest dentro del Notch.
-La revisión **0.4.0** añade gestión mediante NetworkManager/libnm. La importación
-está validada; **la primera conexión real sigue bloqueada hasta aprobarla**.
+La revisión **0.4.1** permite conectar desde el panel mediante NetworkManager/libnm,
+tras aprobar el desbloqueo. La importación está validada; Connect es una acción explícita.
 No hay helper root, pkexec ni policies Polkit propias.
 
 Lo activo con **SUPER+SHIFT+P**, desde la cabecera de Pentest o en
@@ -166,9 +166,8 @@ pasa a Displayed VPN; si cae, se elige la última conexión gestionada que siga
 Connected. Los conflictos de rutas/DNS solo generan un aviso: no se reescriben
 rutas ni se promete que dos redes solapadas funcionen a la vez.
 
-La primera activación sigue cerrada por `ACTIVATION_APPROVED = False` en el
-adaptador, también comprobado en la UI. Después de aprobar esa prueba se retirará
-el bloqueo. No lo desbloqueo como parte de las pruebas de importación.
+Connect quedó desbloqueado por aprobación explícita el 27/09/2026. Abrir el panel,
+recargar Ambxst o encender Pentest no inicia una conexión. Solo Connect lo hace.
 Si un perfil pide contraseña o clave cifrada, falta integrar un agente de
 secretos VPN: se informa el requisito y no se guarda la credencial. Los auth
 files no se importan. Un NEED_AUTH persistente se cancela con error legible.
@@ -211,6 +210,42 @@ No necesito reiniciar la máquina ni tocar GPU, energía o firewall.
 
 Dejo el [registro de validación y las pruebas manuales](docs/pentest-mode-validation.md)
 con los archivos, la integración y las limitaciones comprobadas.
+
+## Ajustes de red, clima y Spotify
+
+Season usa túnel dividido desde 0.4.2: Internet sigue por Wi-Fi/Ethernet y las
+rutas específicas anunciadas por el laboratorio van por la VPN. En su registro
+NetworkManager, IPv4/IPv6 tienen `never-default=yes`, `ignore-auto-routes=no` e
+`ignore-auto-dns=yes`. No se cambió el `.ovpn` ni se añadieron rutas/firewall a
+mano. El DNS general sigue siendo el de mi red; si un laboratorio requiere su
+DNS privado, lo configuro expresamente para ese laboratorio.
+
+Re-import conserva esas tres opciones del registro existente. Los nuevos perfiles
+HTB/THM se importan sin ruta por defecto; Custom conserva el comportamiento del
+importador. Los registros existentes no cambian al recargar el mod. Machines no
+se modificó al corregir Season. Dos laboratorios con rutas solapadas todavía
+pueden competir por el mismo destino: Keep both no resuelve ese solapamiento.
+
+Para verificar después de conectar Season:
+
+```bash
+ip -4 route get 1.1.1.1       # debe seguir por Wi-Fi/Ethernet
+ip -4 route get IP_DEL_LAB   # sustituir por el target real: debe usar el túnel
+nmcli -g ipv4.never-default,ipv4.ignore-auto-routes,ipv4.ignore-auto-dns connection show uuid 58ff049b-a7c8-4131-81f9-1bf1c7274ad4
+```
+
+El clima queda en CDMX y Celsius mediante la configuración nativa local
+`~/.config/ambxst/config/weather.json`: `location` = `Mexico City`, `unit` = `C`.
+El geocoder de esta versión reconoce ese nombre; «Ciudad de México» sin idioma
+explícito devolvía vacío. La ubicación fija evita que una VPN cambie la ciudad
+por GeoIP. Este archivo sigue privado/excluido del repo, como antes.
+
+Spotify usa `.config/spotify-flags.conf` con `--ozone-platform=wayland`.
+El launcher del paquete instalado lee ese archivo; también está incluido en el
+manifest de restauración. Evita el reescalado borroso de XWayland con escala 1.6,
+sin cambiar escala global ni GPU. Después de cerrar y abrir Spotify,
+`hyprctl clients -j` debe mostrar `xwayland: false` para su ventana. Para volver
+al arranque anterior, retiro esa única opción y reinicio Spotify.
 
 ## 1. Hardware
 

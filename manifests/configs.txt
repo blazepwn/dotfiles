@@ -36,3 +36,4 @@
 .local/share/nwg-look/gsettings
 .p10k.zsh
 .zshrc
+.config/spotify-flags.conf
