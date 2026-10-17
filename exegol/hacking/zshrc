@@ -1,0 +1,45 @@
+# Loaded by Exegol's /opt/my-resources/setup/zsh/zshrc.
+[[ -o interactive && ${HOST} == exegol-hacking ]] || return 0
+
+# Keep Exegol's plugins, aliases, completion and history. Replace its prompt hook.
+autoload -Uz add-zsh-hook
+add-zsh-hook -d precmd update_prompt
+add-zsh-hook -d precmd gentoo_precmd
+
+source /opt/my-resources/setup/zsh/hacking/p10k.zsh
+source /opt/my-resources/setup/zsh/hacking/powerlevel10k/powerlevel10k.zsh-theme
+
+# Match the host's interactive tools.
+alias ls='lsd --group-dirs=first'
+alias l='lsd --group-dirs=first'
+alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias lla='lsd -lha --group-dirs=first'
+alias bat='batcat'
+alias cat='batcat'
+alias catn='/usr/bin/cat'
+alias vim='nvim'
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Burp renders directly through Wayland on the host's HiDPI display.
+alias BurpSuiteCommunity='/opt/my-resources/setup/zsh/hacking/burpsuite'
+alias burpsuite='/opt/my-resources/setup/zsh/hacking/burpsuite'
+
+# Alt+arrows: move by words, including Kitty/xterm and tmux escape sequences.
+() {
+  local keymap
+  for keymap in emacs viins; do
+    bindkey -M "$keymap" '^[[1;3D' backward-word
+    bindkey -M "$keymap" '^[[1;3C' forward-word
+    bindkey -M "$keymap" '^[^[[D' backward-word
+    bindkey -M "$keymap" '^[^[[C' forward-word
+    bindkey -M "$keymap" '^[^[OD' backward-word
+    bindkey -M "$keymap" '^[^[OC' forward-word
+    bindkey -M "$keymap" '^[b' backward-word
+    bindkey -M "$keymap" '^[f' forward-word
+    bindkey -M "$keymap" '^[[H' beginning-of-line
+    bindkey -M "$keymap" '^[[F' end-of-line
+    bindkey -M "$keymap" '^[[3~' delete-char
+  done
+}

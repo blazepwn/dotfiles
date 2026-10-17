@@ -90,6 +90,16 @@ class RestoreSafety(unittest.TestCase):
             pairs = entries("configs")
         self.assertEqual([str(dst) for _, dst in pairs], [".config/hypr/hyprland.lua"])
 
+    def test_repository_configs_restore_terminal_tools(self):
+        pairs = entries("configs")
+        sources = {str(dst): src for src, dst in pairs}
+        restore(self.home, pairs, True)
+        for name in (".config/bat/config", ".config/nvim/init.lua", ".local/bin/batcat"):
+            with self.subTest(name=name):
+                self.assertEqual((self.home / name).read_bytes(), sources[name].read_bytes())
+        self.assertTrue((self.home / ".local/bin/batcat").stat().st_mode & 0o111)
+        self.assertIsNone(restore(self.home, pairs, True))
+
     def test_manifest_cannot_import_external_link(self):
         repo = self.base / "repo"
         (repo / "manifests").mkdir(parents=True)

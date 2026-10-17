@@ -17,6 +17,7 @@ instalados. No son un volcado de las más de mil dependencias del sistema.
 | apps.txt | Firefox y Obsidian instalados; VS Code está en aur.txt |
 | optional/ocr-extra.txt | Idiomas OCR instalados pero desactivados; no se instalan por defecto |
 | optional/theme-build.txt | sassc para reconstruir Colloid; no hace falta para copiar el snapshot |
+| optional/exegol.txt | Docker, pipx, argcomplete y xhost del host; revisión del 2026-10-16, fuera de la instalación base |
 | aur.txt | Ocho paquetes externos seleccionados; instalar con yay como usuario |
 | versions.tsv | Versiones y razón de instalación observadas; referencia, no un lockfile |
 

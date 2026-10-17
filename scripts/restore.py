@@ -32,7 +32,9 @@ def entries(group):
                    if group == "assets" else
                    tuple(f".config/{p}/" for p in ("hypr", "kitty", "lsd", "gtk-3.0",
                          "gtk-4.0", "nwg-look", "xsettingsd", "ambxst")))
-        singles = {".config/spotify-flags.conf", ".zshrc", ".p10k.zsh", ".local/bin/lid-power.sh", ".local/share/nwg-look/gsettings"}
+        singles = {".config/spotify-flags.conf", ".config/bat/config", ".config/nvim/init.lua",
+                   ".zshrc", ".p10k.zsh", ".local/bin/lid-power.sh", ".local/bin/batcat",
+                   ".local/share/nwg-look/gsettings"}
         if not name.startswith(allowed) and not (group == "configs" and name in singles):
             raise ValueError(f"Unapproved manifest root: {relative}")
         if name in seen:

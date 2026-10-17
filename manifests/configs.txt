@@ -28,11 +28,14 @@
 .config/hypr/user/windowrules.lua
 .config/kitty/color.ini
 .config/kitty/kitty.conf
+.config/bat/config
 .config/lsd/colors.yaml
 .config/lsd/config.yaml
+.config/nvim/init.lua
 .config/nwg-look/config
 .config/xsettingsd/xsettingsd.conf
 .local/bin/lid-power.sh
+.local/bin/batcat
 .local/share/nwg-look/gsettings
 .p10k.zsh
 .zshrc

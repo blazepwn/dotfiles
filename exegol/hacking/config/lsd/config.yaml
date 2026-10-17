@@ -1,0 +1,9 @@
+color:
+  when: auto
+  theme: default
+icons:
+  when: auto
+  theme: fancy
+sorting:
+  dir-grouping: first
+size: short

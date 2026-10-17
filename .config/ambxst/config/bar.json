@@ -24,5 +24,5 @@
     "screenList": [
     ],
     "showPinButton": false,
-    "use12hFormat": false
+    "use12hFormat": true
 }

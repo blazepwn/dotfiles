@@ -38,7 +38,7 @@ for _, bind in ipairs(custom_binds) do
 end
 
 -- Ambxst asignaba dos acciones a esta combinación. Dejo solo la barra.
--- Para reiniciar la shell ejecuto `ambxst reload` explícitamente.
+-- Ambxst conserva la recarga de la shell en SUPER+SHIFT+R.
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("ambxst toggle bar"))
 
 -- Pentest Mode: comprobado libre antes de instalar el mod local.

@@ -4,7 +4,8 @@ Uso Arch con **Hyprland Lua + Ambxst**, Kitty, Zsh, Powerlevel10k y LSD.
 Este es mi respaldo y mi guía para reinstalar esta laptop. La referencia es
 Hyprland **0.56.2**, Ambxst **1.3.7** y axctl **v0.0.26**.
 
-La última revisión es del **21 de septiembre de 2026**. Distingo cuatro cosas:
+La última sincronización de dotfiles es del **16 de octubre de 2026**;
+la auditoría base del sistema es del **21 de septiembre de 2026**. Distingo cuatro cosas:
 
 | Tipo de información | Qué significa aquí |
 |---|---|
@@ -14,6 +15,8 @@ La última revisión es del **21 de septiembre de 2026**. Distingo cuatro cosas:
 | Warnings y pruebas pendientes | Límites reales; no doy una prueba sin ejecutar por aprobada |
 
 Las correcciones y sus comprobaciones están en [docs/audit.md](docs/audit.md).
+La [sincronización de octubre](docs/update-2026-10-16.md) registra los archivos
+actualizados, las pruebas y las incidencias observadas en la sesión actual.
 No uso el restaurador para particionar, cambiar firmware ni sustituir mis
 configuraciones por otro conjunto de dotfiles.
 
@@ -444,7 +447,7 @@ Mi principal lo carga primero y después importa, en este orden:
 | binds | Unbinds explícitos, aplicaciones, ventanas, workspaces, ratón y multimedia |
 | windowrules | No initial focus, flotantes, tamaños y asignaciones |
 | startup | hypridle, Kitty, apps, nwg-look, polkit, cursor, audio y D-Bus |
-| input | Repetición 30/400 ms, follow_mouse 1, sensibilidad 0 y touchpad |
+| input | Teclados US/ES con SUPER+Espacio, repetición 30/400 ms, follow_mouse 1 y touchpad |
 | gestures | Tres dedos horizontal para cambiar workspace |
 | lid | Solo los eventos on/off que llaman a lid-power.sh |
 
@@ -472,8 +475,8 @@ Mantengo volumen a pasos de 5 %, playerctl y brightnessctl.
 Corregí los conflictos cargados con unbinds antes de mis overrides:
 
 - Ratón, volumen, mute, brillo y multimedia tienen una sola asignación por tecla.
-- SUPER+SHIFT+B solo muestra/oculta la barra. Para reiniciar la shell ejecuto
-  `ambxst reload` deliberadamente.
+- SUPER+SHIFT+B solo muestra/oculta la barra; SUPER+SHIFT+R recarga Ambxst.
+- SUPER+G abre Brave Origin Nightly.
 - SUPER+ALT+Down/j y Up/k redimensionan ±50 mediante
   `hl.dsp.window.resize({ x = 0, y = 50, relative = true })` y su variante negativa.
 - `lid.lua` retira los binds genérico/on/off de Ambxst y define solo mis dos eventos.
@@ -595,11 +598,22 @@ hyprctl setcursor GoogleDot-Black 24
 No ejecutes ese comando desde GNOME/TTY. Los enlaces GTK4 del repo son relativos;
 apuntan al snapshot Colloid bajo `$HOME/.themes`.
 
-## 9. Kitty, Zsh, Powerlevel10k y LSD
+## 9. Kitty, Zsh, Powerlevel10k, LSD y Neovim
 
 Conservo `kitty.conf`, `color.ini`, `.p10k.zsh` y los YAML de LSD. Kitty usa
 Hack Nerd Font a 23 y Zsh. Mantengo aliases `ls`, `l`, `ll`, `la`, `lla`, `cat`
 con bat y `catn` con `/usr/bin/cat`. No tenía alias `tree`; uso `lsd --tree`.
+
+Kitty usa opacidad `0.90`, permite cambiarla en ejecución y cierra ventanas sin
+confirmación. Bat usa el tema ANSI y Neovim conserva el fondo transparente;
+`vim`, `EDITOR` y `VISUAL` apuntan a `nvim`. El restaurador incluye ambos
+archivos de configuración y `~/.local/bin/batcat`, un wrapper del `bat` de Arch.
+Neovim ya está seleccionado en `packages/utilities.txt`.
+
+Zsh comparte el historial entre sesiones y conserva hasta 100000 entradas.
+El alias `xxx` abre `exegol start hacking`; la finalización de Exegol se carga
+solo cuando están disponibles su ejecutable de pipx y `register-python-argcomplete`.
+El [perfil del contenedor](exegol/hacking/README.md) se restaura por separado.
 
 Uso syntax-highlighting, autosuggestions y el plugin sudo de
 `/usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh`. La acción `system` instala
@@ -969,17 +983,21 @@ systemctl --user restart xdg-desktop-portal.service
 Si el entorno viene de otra sesión, sal y vuelve a entrar a Hyprland. No elimino
 GNOME para solucionar un problema de portales.
 
-## 19. Pentesting layer — Next phase
+## 19. Exegol y herramientas de laboratorio
 
-La auditoría inicial no encontró Docker, Exegol, qemu-desktop, virt-manager,
-Burp Suite, wireshark-qt, Nmap, OpenVPN ni wireguard-tools. Las reglas de ventanas
-no significan que ya haya configurado esas herramientas.
+Docker y Exegol se añadieron después de la auditoría inicial. El perfil
+[exegol/hacking](exegol/hacking/README.md) respalda el prompt, los aliases,
+las configuraciones de terminal y el lanzador de Burp con Wayland. La lista
+[packages/optional/exegol.txt](packages/optional/exegol.txt) recoge las dependencias
+del host observadas; Exegol se instala con pipx. No forma parte de la instalación
+base ni del restore de configs. Las imágenes, el runtime Java, los recursos de
+laboratorio y las credenciales permanecen fuera de Git.
 
 Dejo para una fase separada:
 
-- Docker/Exegol: imágenes, almacenamiento, permisos y efecto sobre el firewall.
+- Al reinstalar Docker/Exegol: imágenes, almacenamiento, permisos y efecto sobre el firewall.
 - QEMU/KVM/virt-manager: redes y snapshots de laboratorios.
-- Burp, Wireshark y Nmap: herramientas y permisos necesarios.
+- Wireshark y Nmap en el host: herramientas y permisos necesarios.
 - OpenVPN/WireGuard: CPTS/HTB con credenciales fuera de Git.
 - Python offensive tooling: entornos separados por proyecto.
 - Obsidian, navegador y terminal: notas y flujo de trabajo del laboratorio.

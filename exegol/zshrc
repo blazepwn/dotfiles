@@ -1,0 +1,6 @@
+# Append this block to /opt/my-resources/setup/zsh/zshrc once.
+# BEGIN dotfiles: hacking
+if [[ -o interactive && ${HOST} == exegol-hacking ]]; then
+  source /opt/my-resources/setup/zsh/hacking/zshrc
+fi
+# END dotfiles: hacking

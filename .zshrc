@@ -1,6 +1,12 @@
 
 # Powerlevel10k is loaded below after plugins and keybindings.
 
+# Match the live shell's history limits and sharing between sessions.
+HISTFILE=${HISTFILE:-$HOME/.zsh_history}
+HISTSIZE=100000
+SAVEHIST=100000
+setopt SHARE_HISTORY
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
@@ -17,6 +23,8 @@ unset dotfiles_optional_bin
 export PATH
 
 # Manual aliases
+alias exegol="$HOME/.local/bin/exegol"
+alias xxx='exegol start hacking'
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -24,6 +32,16 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
 alias catn='/usr/bin/cat'
+alias vim='nvim'
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Optional completion for the pipx installation of Exegol.
+if [[ -x "$HOME/.local/bin/exegol" ]] && (( $+commands[register-python-argcomplete] )); then
+    autoload -Uz compinit
+    compinit
+    eval "$(register-python-argcomplete --no-defaults exegol)"
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Plugins

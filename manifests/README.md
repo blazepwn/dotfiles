@@ -13,3 +13,7 @@ Los scripts rechazan escapes de ruta y enlaces de origen que salen del repo.
 La lista de assets es grande porque el repo ya contiene el árbol completo de
 iconos Kora. Enumerarlo evita que una carpeta futura se copie implícitamente.
 No se ha duplicado el árbol de iconos ni comprimido en un segundo archivo.
+
+Bat, Neovim y el wrapper `batcat` tienen entradas explícitas en `configs.txt`
+y están autorizados en `scripts/restore.py`. El perfil bajo `exegol/` se copia
+por separado a los recursos de Exegol; no se instala en el HOME del host.

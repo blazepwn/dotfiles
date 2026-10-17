@@ -1,0 +1,4 @@
+# Use terminal colors without painting an opaque background.
+--theme="ansi"
+--style="numbers,changes,header"
+--paging=auto

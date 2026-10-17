@@ -55,3 +55,6 @@ backups/
 .config/gtk-3.0/bookmarks
 .config/ambxst/config/assistant.json
 .config/ambxst/config/weather.json
+# Exegol runtimes and third-party checkouts are installed separately.
+exegol/hacking/jbr-21/
+exegol/hacking/powerlevel10k/

@@ -133,7 +133,7 @@ local workspace_rules = {
     { class = [[^(Brave-browser|brave-origin-nightly|brave-browser|brave)$]], workspace = "2" },
     { class = [[^(firefox)$]], workspace = "2" },
     { class = [[^(obsidian)$]], workspace = "4" },
-    { class = [[^(burp-StartBurp|burpsuite|BurpSuite)$]], workspace = "3" },
+    { class = [[^(burp-StartBurp|burpsuite|BurpSuite|/opt/tools/BurpSuiteCommunity/BurpSuiteCommunity\.jar)$]], workspace = "3" },
     { class = [[^(discord)$]], workspace = "6" },
     { class = [[^(Spotify|spotify)$]], workspace = "5" },
 }

@@ -170,7 +170,7 @@
                     "layouts": [
                     ]
                 },
-                "key": "B",
+                "key": "R",
                 "modifiers": [
                     "SUPER",
                     "SHIFT"
@@ -2466,6 +2466,28 @@
                 }
             ],
             "name": "Move Column to Workspace 10"
+        },
+        {
+            "actions": [
+                {
+                    "args": {
+                        "command": "brave-origin-nightly"
+                    },
+                    "id": "command.run",
+                    "layouts": [
+                    ]
+                }
+            ],
+            "enabled": true,
+            "keys": [
+                {
+                    "key": "G",
+                    "modifiers": [
+                        "SUPER"
+                    ]
+                }
+            ],
+            "name": "Brave"
         }
     ],
     "defaultAmbxstBinds": {

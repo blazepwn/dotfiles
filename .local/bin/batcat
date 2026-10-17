@@ -1,0 +1,3 @@
+#!/bin/sh
+# Arch names this executable bat; Debian names it batcat.
+exec /usr/bin/bat "$@"

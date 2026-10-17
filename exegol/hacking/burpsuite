@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+
+# Native Wayland lets Burp follow the monitor's fractional scale at full detail.
+profile=/opt/my-resources/setup/zsh/hacking
+jar=/opt/tools/BurpSuiteCommunity/BurpSuiteCommunity.jar
+backend=${BURP_DISPLAY_BACKEND:-auto}
+wayland_socket=${WAYLAND_DISPLAY:-}
+case "$wayland_socket" in
+    /*) ;;
+    ?*) wayland_socket="${XDG_RUNTIME_DIR:-/tmp}/$wayland_socket" ;;
+esac
+
+if [ "$backend" != x11 ] && [ -n "$wayland_socket" ] && [ -S "$wayland_socket" ]; then
+    if [ ! -x "$profile/jbr-21/bin/java" ]; then
+        echo 'Falta el runtime de Burp: ejecuta el install-burp-runtime.sh del perfil hacking.' >&2
+        exit 1
+    fi
+    exec "$profile/jbr-21/bin/java" -Dawt.toolkit.name=WLToolkit \
+        -Xmx4g -jar "$jar" "$@"
+fi
+
+# Compatibility fallback, also selectable with BURP_DISPLAY_BACKEND=x11.
+exec /usr/lib/jvm/java-21-openjdk/bin/java -Xmx4g -jar "$jar" "$@"

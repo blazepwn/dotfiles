@@ -1,0 +1,5 @@
+# Host dependencies observed on 2026-10-16; Exegol itself is installed with pipx.
+docker
+python-argcomplete
+python-pipx
+xorg-xhost
